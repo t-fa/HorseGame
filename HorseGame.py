@@ -17,7 +17,7 @@ class Horses():
     
     def display_stats(self): # Displays horse stats
         print("Here are your horse's stats: ")
-        print(self.pattern, self.color)
+        print("Pattern : {}\nColor : {}".format(self.pattern, self.color))
         print('Strength: ' + str(self.strength))
         print('Speed: ' + str(self.speed))
         print('Stamina: ' + str(self.stamina))
@@ -46,7 +46,7 @@ def welcome(): # Starts the game off in the ranch.
             beginning()
         else:
             welcome()
-    
+
 def horse_select():
     choice = input('Which horse would you like to take out? (Enter a number from 1 to %d.)\n' % len(registered_horses))
     try:
@@ -64,7 +64,7 @@ def horse_select():
         
 def output_selected_horse_stat(l):
     '''print out the stat of horse from extracted list'''
-    print(l[0],l[1])
+    print("Pattern : {}\nColor : {}".format(l[0],l[1]))
     print("Strenth: %s" %str(l[2]))
     print("Speed: %s" %str(l[3]))
     print("Stamina: %s" %str(l[4]))
@@ -127,8 +127,6 @@ def horse_roll():
 
 def main():
     welcome()               
-
-
+    
 if __name__ == '__main__':
     main()
-
