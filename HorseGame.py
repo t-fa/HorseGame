@@ -1,5 +1,6 @@
 import random
 import time 
+from builtins import input
 
 horse_dic = {}
 registered_horses = []
@@ -121,7 +122,7 @@ def horse_roll():
 def main():
     welcome()                
 
-    
+
 if __name__ == '__main__':
     main()
 
