@@ -46,7 +46,7 @@ def welcome(): # Starts the game off in the ranch.
             beginning()
         else:
             welcome()
-
+    
 def horse_select():
     choice = input('Which horse would you like to take out? (Enter a number from 1 to %d.)\n' % len(registered_horses))
     try:
@@ -56,13 +56,19 @@ def horse_select():
                 print('\nSomething went wrong.\n')
             else:
                 print('Ok. Taking out %s. Here are his stats:\n' % registered_horses[choice])
-                print(horse_dic[registered_horses[choice]])
+                output_selected_horse_stat(horse_dic.get(registered_horses[choice])) #prints out the stat of selected horse , horse_dic.get(registered_horses[choice]) extracts the stat list of selected horse
         else:
             print('Unregistered horse.')
     except ValueError:
         print('Please enter a number.')
         
-            
+def output_selected_horse_stat(l):
+    '''print out the stat of horse from extracted list'''
+    print(l[0],l[1])
+    print("Strenth: %s" %str(l[2]))
+    print("Speed: %s" %str(l[3]))
+    print("Stamina: %s" %str(l[4]))
+    print("Temperament: %s" %str(l[5]))
 
 def beginning(): # Horse catching game
     new_horse()
@@ -120,7 +126,7 @@ def horse_roll():
                 break
 
 def main():
-    welcome()                
+    welcome()               
 
 
 if __name__ == '__main__':
